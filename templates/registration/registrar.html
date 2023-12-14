@@ -1,0 +1,27 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href='{% static "css/registro.css" %}'/>
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="wrapper">
+        <h2>Registro de usuario</h2>
+        <form action="" method="POSt">
+            {% csrf_token %}
+            <table>
+                {{ form.as_table }}
+            </table>
+            <input type="reset" value="cancelar" id="boton1">
+            <input type="submit" value="registrar" id="boton2">
+            
+        </form>
+    </div>
+</body>
+</html>
+{% endblock content %}

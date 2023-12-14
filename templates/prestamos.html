@@ -1,0 +1,122 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Django Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href='{% static "css/inventario.css" %}'/>      
+ 
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-with-bg ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src='{% static "imagenes/logo22.png"%}'alt="Logo de la empresa" height="90">
+        
+            </a>
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'inicio2' %}">Inicio</a>
+              </li>  
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'maquinaria-list' %}">Datos de Inventarios</a>
+              </li> 
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'prestamos_area' %}">Ver Prestamos</a>
+              </li> 
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'agregar_maquinaria' %}">Agregar Datos a Inventario</a>
+              </li> 
+              {% if user.is_authenticated %}
+              <li class="nav-item">
+                    <a class="nav-link" href="#">Usuario: {{user.username}} </a>
+              </li>
+              {% endif %}
+             <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">Cerrar sesion</a>
+             </li>
+             
+            </ul>
+          </div>
+        </div>
+      </nav>
+    
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Título de la Tarjeta</h5>
+    
+            <div class="form-group">
+                <label for="tipo">Ordenar por Estado:</label>
+                <select id="tipo" onchange="filtrarPorTipo()" class="form-control">
+                    <option value="todos">Todos</option>
+                    <option value="prestado">Prestado</option>
+                    <option value="entregado">Entregado</option>
+                    <option value="perdido">Perdido</option>
+                </select>
+            </div>
+    
+            <div class="form-group">
+                <label for="busqueda">Buscar:</label>
+                <input type="text" id="busqueda" class="form-control" onkeyup="buscarTabla()" placeholder="Escribe para buscar...">
+            </div>
+                <br>
+            <div class="table-responsive">
+                <table class="table" id="tabla-maquinaria">
+                    <thead>
+                        <!-- Encabezados de la tabla -->
+                        <tr>
+                            <th>Nombre del Área</th>
+                            <th>Teléfono</th>
+                            <th>Correo Electrónico</th>
+                            <th>Responsable</th>
+                            <th>Tipo de Préstamo</th>
+                            <th>Descripción</th>
+                            <th>Elemento Prestado</th>
+                            <th>Fecha Del Préstamo</th>
+                            <th>Estado</th>
+                            <!-- Agrega más encabezados según sea necesario -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Contenido de la tabla generado dinámicamente -->
+                        {% for prestamo in prestamos %}
+                        {% for area_salud in areas_salud %}
+                        <tr data-estado="{{ prestamo.Estado }}">
+                            <td>{{ area_salud.NombreArea }}</td>
+                            <td>{{ area_salud.Telefono }}</td>
+                            <td>{{ area_salud.CorreoElectronico }}</td>
+                            <td>{{ area_salud.ResponsableAreaSalud }}</td>
+                            <td>{{ prestamo.Tipo }}</td>
+                            <td>{{ prestamo.Descripcion }}</td>
+                            <td>{{ prestamo.ElementoPrestado }}</td>
+                            <td>{{ prestamo.FechaPrestamo }}</td>
+                            <td>{{ prestamo.Estado }}</td>
+                        </tr>
+                        {% endfor %}
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/prestamos.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>

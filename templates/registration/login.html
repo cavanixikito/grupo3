@@ -1,0 +1,28 @@
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href='{% static "css/inicio.css" %}'/>
+    <title>Login</title>
+</head>
+<body>
+
+    <div class="wrapper">
+        <h2>Inicia Sesion</h2>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <table>
+                {{form.as_table}}
+            </table>
+            <input type="submit" value="Login" id="boton1">
+            <button id="boton2"><a href="{% url 'registro_usuario' %}">Registro</a></button>
+            <a id="admin" href="{% url 'admin:index' %}">Administracion</a>
+        </form>
+    </div>
+    
+</body>
+</html>
+{% endblock content %}
