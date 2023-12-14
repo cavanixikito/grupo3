@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('/static/imagenes/fondoo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Modificacion de la clase wrapper */
+.wrapper {
+    width: 450px;
+    height: 280px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    color: #fff;
+    border-radius: 10px;
+    padding: 30px 40px;
+}
+
+/* Modificacion del h2 de la clase wrapper */
+.wrapper h2 {
+    font-size: 25px;
+    text-align: center;
+}
+
+/* Estilo de los botones */
+#boton1,
+#boton2 {
+    font-size: 17px;
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #dd3603; /* Color de fondo */
+    color: #fff; /* Color de texto */
+    transition: background-color 0.3s, color 0.3s; /* Efecto de transición */
+}
+
+/* Cambia el color cuando el mouse pasa sobre el botón */
+#boton1:hover,
+#boton2:hover {
+    background-color: #ffffff; /* Nuevo color de fondo */
+    color: rgb(0, 0, 0); /* Nuevo color de texto */
+}
+
+/* Estilo del botón admin */
+#admin {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #dd3603; /* Color de fondo */
+    color: #fff; /* Color de texto */
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s; /* Efecto de transición */
+}
+
+/* Cambia el color cuando el mouse pasa sobre el botón admin */
+#admin:hover {
+    background-color: #ffffff; /* Nuevo color de fondo al pasar el mouse */
+    color: rgb(0, 0, 0); /* Nuevo color de texto al pasar el mouse */
+}

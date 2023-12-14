@@ -1,0 +1,135 @@
+#btnUpdate{
+    display: none;
+}
+.card {
+    background-color: rgba(0, 0, 0, 0); /* Cambia el valor "0.5" según la opacidad deseada */
+    color: #fff; /* Color de texto */
+}
+
+
+.form-label{
+    color: #fff;
+}
+
+
+#inve{
+    text-align: center;
+    color: white;
+}
+
+
+
+/* Estilos para los botones */
+.custom-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.custom-btn:hover {
+    background-color: #0056b3;
+}
+
+
+
+/* Estilos para la tabla */
+.table {
+    background-color: #fff; 
+    border-collapse: collapse; 
+    width: 100%; 
+    margin-bottom: 20px;
+    border: 2px solid #000; 
+}
+
+
+.table th {
+    background-color: #000; 
+    color: #fff;
+    padding: 10px; 
+    text-align: center; 
+    border: 1px solid #fff; 
+}
+
+
+.table td {
+    padding: 10px; 
+    text-align: center; 
+    border: 1px solid black; 
+}
+
+.table tbody tr:nth-child(odd) {
+    background-color: #000; 
+}
+
+
+.table tbody tr:nth-child(even) {
+    background-color: #222; 
+}
+
+
+.table a {
+    color: #fff; 
+    text-decoration: none; 
+}
+
+body {
+    background-image: url('/static/imagenes/Camion.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center top;
+    min-height: 100vh;
+   
+}
+
+
+  
+
+ /* Estilos de navbar*/
+ .navbar .navbar-nav .nav-link{
+    text-decoration: none; /* Elimina el subrayado predeterminado del enlace */
+    position: relative; /* Establece la posición relativa para los enlaces */
+    transition: border-bottom 0.3s ease; /* Agrega una transición suave */
+    color: #fff;
+   
+   
+  }
+  
+  .nav-link::after {
+    content: ''; /* Agrega un elemento pseudo ::after */
+    position: absolute; /* Establece la posición absoluta para la línea */
+    bottom: 0; /* Coloca la línea en la parte inferior del enlace */
+    left: 0; /* Alinea la línea con el borde izquierdo del enlace */
+    width: 100%; /* Establece el ancho de la línea al 100% del enlace */
+    border-bottom: 2px solid transparent; /* Define una línea transparente inicial */
+  }
+  
+  .nav-link:hover::after {
+    border-bottom: 2px solid #FFBF00; /* Cambia el color y grosor de la línea al pasar el ratón */
+  }
+
+.card-centered {
+    text-align: center; /* Centra el contenido horizontalmente */
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente en navegadores modernos */
+    align-items: center; /* Centra el contenido verticalmente */
+    min-height: 100vh; /* Centra verticalmente en la ventana gráfica */
+}
+
+#tabla-maquinaria {
+    position: relative;
+    max-width: 80%;
+    font-size: 18px; /* Puedes ajustar el tamaño de fuente según tus preferencias */
+    left: -25px;
+    left: 60px;
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+}
+i{
+    font-size: 20px;
+}
